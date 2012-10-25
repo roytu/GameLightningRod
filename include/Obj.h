@@ -27,6 +27,7 @@ public:
 	bool visible;
 
 	ObjectType objectType;
+	ObjectType parent;
 
 	double imageIndex;
 	double imageSpeed;
