@@ -6,6 +6,11 @@
 #include <algorithm>
 #include <time.h>
 
+#include "ObjChar.h"
+#include "ObjMask.h"
+
+#include "SprRoomTest.h"
+
 HGame* HGame::instance;
 
 HGame::HGame(void)
@@ -20,6 +25,11 @@ HGame::HGame(void)
 	new HRoom();
 
 	HRoom::gotoRoom(HResources::ROOM_TEST);
+
+	new ObjChar(20, 500);
+
+	ObjMask* roomMask = new ObjMask(0, 0);
+	roomMask->sprite = new SprRoomTest();
 
     clock_t t = clock();
 	// Start the game loop

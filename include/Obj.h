@@ -9,6 +9,8 @@ protected:
 
 	enum ObjectType
 	{
+	    OBJ_CHAR,
+	    OBJ_MASK
 	};
 
 	enum Sides

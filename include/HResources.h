@@ -10,6 +10,10 @@ private:
 public:
 	static Room* ROOM_TEST;
 
+	static sf::Image GFX_CHAR;
+
+	static sf::Image GFX_ROOM_TEST;
+
 	HResources(void);
 	~HResources(void);
 

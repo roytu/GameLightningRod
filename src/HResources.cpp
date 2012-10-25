@@ -5,9 +5,9 @@
 HResources* HResources::instance;
 
 //sprites
-
+sf::Image HResources::GFX_CHAR;
 //bkg
-
+sf::Image HResources::GFX_ROOM_TEST;
 //rooms
 Room* HResources::ROOM_TEST;
 
@@ -16,6 +16,9 @@ HResources::HResources(void)
 	instance = this;
 
 	ROOM_TEST = Room_Load("assets/rooms/roomTest.txt");
+
+	GFX_CHAR.LoadFromFile("assets/gfx/misc/gfxChar.png");
+	GFX_ROOM_TEST.LoadFromFile("assets/gfx/rooms/gfxRoomTest.png");
 }
 
 HResources::~HResources(void)
