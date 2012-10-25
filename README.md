@@ -1,4 +1,6 @@
+<<<<<<< HEAD
 GameLightningRod
 ================
 
 WIP Game
+=======
