@@ -11,12 +11,6 @@ class Obj
 protected:
 	void init();
 
-	enum ObjectType
-	{
-	    OBJ_CHAR,
-	    OBJ_MASK
-	};
-
 	enum Sides
 	{
 		RIGHT,
@@ -28,7 +22,8 @@ protected:
 public:
     enum ObjectType
 	{
-	    TEST
+        OBJ_CHAR,
+	    OBJ_MASK
 	};
 
     static std::map<ObjectType, ObjectType> parentMap;

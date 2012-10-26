@@ -2,6 +2,9 @@
 #include "HGame.h"
 #include <vector>
 #include <cmath>
+#include <initializer_list>
+
+#include <iostream>
 
 #include "LDraw.h"
 
@@ -24,9 +27,7 @@ Obj::Obj(double x, double y)
 void Obj::init()
 {
     //TODO setup parent hierarchy here
-    parentMap = std::map<ObjectType, ObjectType>({
-                                                 /* TODO parent hierarchy here */
-                                                 });
+    parentMap = std::map<ObjectType, ObjectType>();
 
 	visible = true;
 

@@ -29,8 +29,7 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-Wall" />
-			<Add directory="HGameSFML/include" />
+			<Add directory="include" />
 		</Compiler>
 		<Linker>
 			<Add library="sfml-audio" />
@@ -39,25 +38,32 @@
 			<Add library="sfml-system" />
 			<Add library="sfml-window" />
 		</Linker>
-		<Unit filename="HGameSFML/include/H.h" />
-		<Unit filename="HGameSFML/include/HGame.h" />
-		<Unit filename="HGameSFML/include/HResources.h" />
-		<Unit filename="HGameSFML/include/HRoom.h" />
-		<Unit filename="HGameSFML/include/HScreen.h" />
-		<Unit filename="HGameSFML/include/LDraw.h" />
-		<Unit filename="HGameSFML/include/Obj.h" />
-		<Unit filename="HGameSFML/include/Room.h" />
-		<Unit filename="HGameSFML/include/Spr.h" />
-		<Unit filename="HGameSFML/src/HGame.cpp" />
-		<Unit filename="HGameSFML/src/HResources.cpp" />
-		<Unit filename="HGameSFML/src/HRoom.cpp" />
-		<Unit filename="HGameSFML/src/HScreen.cpp" />
-		<Unit filename="HGameSFML/src/LDraw.cpp" />
-		<Unit filename="HGameSFML/src/Obj.cpp" />
-		<Unit filename="HGameSFML/src/Room.cpp" />
-		<Unit filename="HGameSFML/src/Spr.cpp" />
-		<Unit filename="HGameSFML/src/main.cpp" />
-		<Unit filename="cb.bmp" />
+		<Unit filename="include/H.h" />
+		<Unit filename="include/HGame.h" />
+		<Unit filename="include/HResources.h" />
+		<Unit filename="include/HRoom.h" />
+		<Unit filename="include/HScreen.h" />
+		<Unit filename="include/LDraw.h" />
+		<Unit filename="include/Obj.h" />
+		<Unit filename="include/ObjChar.h" />
+		<Unit filename="include/ObjMask.h" />
+		<Unit filename="include/Room.h" />
+		<Unit filename="include/Spr.h" />
+		<Unit filename="include/SprChar.h" />
+		<Unit filename="include/SprRoomTest.h" />
+		<Unit filename="src/HGame.cpp" />
+		<Unit filename="src/HResources.cpp" />
+		<Unit filename="src/HRoom.cpp" />
+		<Unit filename="src/HScreen.cpp" />
+		<Unit filename="src/LDraw.cpp" />
+		<Unit filename="src/Obj.cpp" />
+		<Unit filename="src/ObjChar.cpp" />
+		<Unit filename="src/ObjMask.cpp" />
+		<Unit filename="src/Room.cpp" />
+		<Unit filename="src/Spr.cpp" />
+		<Unit filename="src/SprChar.cpp" />
+		<Unit filename="src/SprRoomTest.cpp" />
+		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
