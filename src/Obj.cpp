@@ -178,7 +178,6 @@ Obj* Obj::getCollisionAt(double x, double y, ObjectType type)
 			Spr* spr1 = sprite;
 			Spr* spr2 = o->sprite;
 
-
 			sf::Rect<double> rect1 = spr1->getTransformedHitbox(x, y);
             sf::Rect<double> rect2 = spr2->getTransformedHitbox(x, y);
 
@@ -189,57 +188,14 @@ Obj* Obj::getCollisionAt(double x, double y, ObjectType type)
                 {
                     for(int y=overlap.Top;y<overlap.Bottom;y++)
                     {
-                        if(spr1->image->GetPixel(x, y).a == 255 && spr2->image->GetPixel(x, y).a == 255)
+                        if(isObjectAtPoint(x, y))
                         {
+                            if(o->isObjectAtPoint(x, y))
                             return o;
                         }
                     }
                 }
             }
-
-
-
-
-
-
-
-
-
-			switch(sprite->hitboxType)
-			{
-                case Spr::HITBOX_PRECISE:
-                {
-                    sf::Rect<double> rect1 = spr1->getTransformedHitbox(x, y);
-                    sf::Rect<double> rect2 = spr2->getTransformedHitbox(x, y);
-
-                    sf::Rect<double> overlap;
-                    if(rect1.Intersects(rect2, &overlap))
-                    {
-                        for(int x=overlap.Left;x<overlap.Right;x++)
-                        {
-                            for(int y=overlap.Top;y<overlap.Bottom;y++)
-                            {
-                                if(isObjectAtPoint(x, y) && o->isObjectAtPoint(x, y))
-                                {
-                                    return o;
-                                }
-                            }
-                        }
-                    }
-                }
-                break;
-                case Spr::HITBOX_RECTANGLE:
-                {
-                    sf::Rect<double> rect1 = spr1->getTransformedHitbox(x, y);
-                    sf::Rect<double> rect2 = spr2->getTransformedHitbox(x, y);
-
-                    if(rect1.Intersects(rect2))
-                    {
-                        return o;
-                    }
-                }
-				break;
-			}
 		}
 	}
 	return NULL;
