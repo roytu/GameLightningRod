@@ -26,7 +26,7 @@ HGame::HGame(void)
 
 	HRoom::gotoRoom(HResources::ROOM_TEST);
 
-	new ObjChar(20, 500);
+	ObjChar* oChar = new ObjChar(614, 832);
 
 	ObjMask* roomMask = new ObjMask(0, 0);
 	roomMask->sprite = new SprRoomTest();
