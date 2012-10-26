@@ -177,6 +177,34 @@ Obj* Obj::getCollisionAt(double x, double y, ObjectType type)
 		{
 			Spr* spr1 = sprite;
 			Spr* spr2 = o->sprite;
+
+
+			sf::Rect<double> rect1 = spr1->getTransformedHitbox(x, y);
+            sf::Rect<double> rect2 = spr2->getTransformedHitbox(x, y);
+
+            sf::Rect<double> overlap;
+            if(rect1.Intersects(rect2, &overlap))
+            {
+                for(int x=overlap.Left;x<overlap.Right;x++)
+                {
+                    for(int y=overlap.Top;y<overlap.Bottom;y++)
+                    {
+                        if(spr1->image->GetPixel(x, y).a == 255 && spr2->image->GetPixel(x, y).a == 255)
+                        {
+                            return o;
+                        }
+                    }
+                }
+            }
+
+
+
+
+
+
+
+
+
 			switch(sprite->hitboxType)
 			{
                 case Spr::HITBOX_PRECISE:
@@ -191,7 +219,7 @@ Obj* Obj::getCollisionAt(double x, double y, ObjectType type)
                         {
                             for(int y=overlap.Top;y<overlap.Bottom;y++)
                             {
-                                if(spr1->image->GetPixel(x, y).a == 255 && spr2->image->GetPixel(x, y).a == 255)
+                                if(isObjectAtPoint(x, y) && o->isObjectAtPoint(x, y))
                                 {
                                     return o;
                                 }
@@ -220,14 +248,35 @@ Obj* Obj::getCollisionAt(double x, double y, ObjectType type)
 bool Obj::isObjectAtPoint(double x, double y)
 {
     Spr* spr = sprite;
+    sf::Rect hbox = spr->getTransformedHitbox(this->x, this->y);
     switch(spr->hitboxType)
     {
         //TODO support others
+        case Spr::HITBOX_PRECISE:
+        {
+            if(hbox.Contains(x, y))
+            {
+                for(int sx = hbox.Left; sx < hbox.Right; sx++)
+                {
+                    for(int sy = hBox.Top; sy < hbox.Bottom; sy++)
+                    {
+                        if(spr->image->GetPixel().a > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+        break;
         case Spr::HITBOX_RECTANGLE:
-            if(spr->getTransformedHitbox(this->x, this->y).Contains(x, y))
+        {
+            if(hbox.Contains(x, y))
             {
                 return true;
             }
+        }
         break;
     }
 }
