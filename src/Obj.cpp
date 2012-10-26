@@ -29,6 +29,8 @@ void Obj::init()
     //TODO setup parent hierarchy here
     parentMap = std::map<ObjectType, ObjectType>();
 
+    doesExist = true;
+
 	visible = true;
 
 	imageIndex = 0;
@@ -85,7 +87,6 @@ void Obj::onStep()
             }
             onAnimationEnd();
         }
-        if(!doesExist){return;}
     }
 
 	xprev = x;
